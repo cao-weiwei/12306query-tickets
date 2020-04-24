@@ -105,11 +105,11 @@ docopt(doc, argv=None, help=True, version=None, options_first=False)
 ![Python3实现火车票查询工具-笔记-图4-列车信息接口](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE4-%E5%88%97%E8%BD%A6%E4%BF%A1%E6%81%AF%E6%8E%A5%E5%8F%A3.png)
 - 再点击`Preview`查看返回结果，这个就是查询到的列车时刻信息了
 
-![Python3实现火车票查询工具-笔记-图5-响应的列车信息]()
+![Python3实现火车票查询工具-笔记-图5-响应的列车信息](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE5-%E5%93%8D%E5%BA%94%E7%9A%84%E5%88%97%E8%BD%A6%E4%BF%A1%E6%81%AF.png)
 
 - 知道如何查询列车车次信息后，还有一个问题，就是我们输入的是中文车站名，接口处理的是英文车站代码，这个映射关系还不知道，需要继续查看页面加载的文件，寻找这个对应关系的文件，结果找到了如图文件
 
-![Python3实现火车票查询工具-笔记-图6-车站中英文对照文件]()
+![Python3实现火车票查询工具-笔记-图6-车站中英文对照文件](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE6-%E8%BD%A6%E7%AB%99%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E7%85%A7%E6%96%87%E4%BB%B6.png)
 
 ##### 2.2使用`requests`库
 
@@ -138,11 +138,11 @@ pprint(dict(stations), indent=4)
 
 ​		— `stations` 返回的结果如下图，是车站中文名和英文代码构成的元组组成的列表
 
-![Python3实现火车票查询工具-笔记-图7-stations初步处理](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图7-stations初步处理.png)
+![Python3实现火车票查询工具-笔记-图7-stations初步处理](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE7-stations%E5%88%9D%E6%AD%A5%E5%A4%84%E7%90%86.png)
 
 ​		— 使用 `python parse_stations.py > stations.py`命令并生成`stations.py`文件，车站文件内容为中文名和英文代码构成的字典，这样就可以导入`stations.py`文件后根据键（车站中文名）从字典中检索对应值（车站中文对应的英文代码）
 
-![Python3实现火车票查询工具-笔记-图8-stations字典](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图8-stations字典.png)
+![Python3实现火车票查询工具-笔记-图8-stations字典](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE8-stations%E5%AD%97%E5%85%B8.png)
 
 - 回顾一下，在命令行界面输入的起始车站中文名和列车出发日期，这些信息都在`arguments`这个字典对象中，只需要根据输入的信息匹配车站英文代码，然后访问车次查询接口，这样就可以查询列车信息了
 
@@ -168,7 +168,7 @@ pprint(dict(stations), indent=4)
 
   ​	— 返回的车次结果信息如图所示
 
-  ![Python3实现火车票查询工具-笔记-图9-车次信息返回结果](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图9-车次信息返回结果.png)
+  ![Python3实现火车票查询工具-笔记-图9-车次信息返回结果](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE9-%E8%BD%A6%E6%AC%A1%E4%BF%A1%E6%81%AF%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C.png)
 
 ##### 2.3解析车次信息
 
@@ -176,15 +176,15 @@ pprint(dict(stations), indent=4)
 
 进入浏览器调试模式，查看源代码`source`。猜测是图中所示的文件可能包括车票信息，因为查询车次就是查询列车余票信息。
 
-![Python3实现火车票查询工具-笔记-图10-车次信息js文件](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图10-车次信息js文件.png)
+![Python3实现火车票查询工具-笔记-图10-车次信息js文件](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE10-%E8%BD%A6%E6%AC%A1%E4%BF%A1%E6%81%AFjs%E6%96%87%E4%BB%B6.png)
 
 将压缩的js代码调整下格式，然后尝试搜索“硬座”与列车相关的信息关键词，结果找到了如下代码，这下知道坐席代码了：
 
-![Python3实现火车票查询工具-笔记-图11-坐席类别信息代码](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图11-坐席类别信息代码.png)
+![Python3实现火车票查询工具-笔记-图11-坐席类别信息代码](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE11-%E5%9D%90%E5%B8%AD%E7%B1%BB%E5%88%AB%E4%BF%A1%E6%81%AF%E4%BB%A3%E7%A0%81.png)
 
 继续寻找“硬座”，发现并没有更多有价值内容，然后尝试搜索“硬座”的键值“YZ”，发现关键代码：
 
-![Python3实现火车票查询工具-笔记-图12-车次信息代码](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图12-车次信息代码.png)
+![Python3实现火车票查询工具-笔记-图12-车次信息代码](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE12-%E8%BD%A6%E6%AC%A1%E4%BF%A1%E6%81%AF%E4%BB%A3%E7%A0%81.png)
 
 完美，这段代码十分详细的介绍了车次信息中各个值的含义，我们再拿来和在12306查询到的车次信息比对发现完全正确，这样就可以解析车次信息了。
 
@@ -276,11 +276,11 @@ def cli():
 
 测试下输出的结果，输入`python tickets.py 杭州 绩溪县 2019-03-30`，可查询到如下列车信息：
 
-![Python3实现火车票查询工具-笔记-图13-车次信息结果展示](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图13-车次信息结果展示.png)
+![Python3实现火车票查询工具-笔记-图13-车次信息结果展示](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE13-%E8%BD%A6%E6%AC%A1%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA.png)
 
 看一下12306的查询结果，比对一下，完全一致。
 
-![Python3实现火车票查询工具-笔记-图14-车次信息结果展示-12306网站](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图14-车次信息结果展示-12306网站.png)
+![Python3实现火车票查询工具-笔记-图14-车次信息结果展示-12306网站](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE14-%E8%BD%A6%E6%AC%A1%E4%BF%A1%E6%81%AF%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA-12306%E7%BD%91%E7%AB%99.png)
 
 ##### 3.2美化输出界面
 
