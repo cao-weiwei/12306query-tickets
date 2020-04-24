@@ -4,7 +4,7 @@
 
 这个项目来源于[此处](https://www.shiyanlou.com/courses/623)，本文是在学习后进行的总结，最终效果如图所示。
 
-![Python3实现火车票查询工具-笔记-图1-最终结果示例](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图1-最终结果示例.png)
+![Python3实现火车票查询工具-笔记-图1-最终结果示例](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE1-%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B.png)
 
 本项目需要`Python`基础语法知识，在项目中可以学习到如下内容：
 - `docopt`、`requests`、`colorama`和`prettytable`库的使用
@@ -88,7 +88,7 @@ docopt(doc, argv=None, help=True, version=None, options_first=False)
 
 - 实际运行下如上代码，看到如下所示返回结果内容。
 
-![Python3实现火车票查询工具-笔记-图2-docopt示例](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图2-docopt示例.png)
+![Python3实现火车票查询工具-笔记-图2-docopt示例](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE2-docopt%E7%A4%BA%E4%BE%8B.png)
 
 #### 2.获取列车信息
 
@@ -98,19 +98,18 @@ docopt(doc, argv=None, help=True, version=None, options_first=False)
 
 - 在列车查询页面，然后打开浏览器调试模式（Windows下Chrome浏览器快捷键是F12），进入`Network`中，查看`XHR`，然后查询列车信息
 
-![Python3实现火车票查询工具-笔记-图3-查看列车信息接口](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图3-查看列车信息接口.png)
+![Python3实现火车票查询工具-笔记-图3-查看列车信息接口](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE3-%E6%9F%A5%E7%9C%8B%E5%88%97%E8%BD%A6%E4%BF%A1%E6%81%AF%E6%8E%A5%E5%8F%A3.png)
 
 - 点击箭头指向的文件，我们可以看到在 `Headers`栏目中的`Request URL`中包括了查询的所有条件信息：出发地、目的地、出发日
 
-![Python3实现火车票查询工具-笔记-图4-列车信息接口](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图4-列车信息接口.png)
-
+![Python3实现火车票查询工具-笔记-图4-列车信息接口](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE4-%E5%88%97%E8%BD%A6%E4%BF%A1%E6%81%AF%E6%8E%A5%E5%8F%A3.png)
 - 再点击`Preview`查看返回结果，这个就是查询到的列车时刻信息了
 
-![Python3实现火车票查询工具-笔记-图5-响应的列车信息](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图5-响应的列车信息.png)
+![Python3实现火车票查询工具-笔记-图5-响应的列车信息]()
 
 - 知道如何查询列车车次信息后，还有一个问题，就是我们输入的是中文车站名，接口处理的是英文车站代码，这个映射关系还不知道，需要继续查看页面加载的文件，寻找这个对应关系的文件，结果找到了如图文件
 
-![Python3实现火车票查询工具-笔记-图6-车站中英文对照文件](/Users/caoweiwei/Nutstore Files/From_WorkPC/实验楼项目/12306车票查询小工具/Python3实现火车票查询工具-笔记-图6-车站中英文对照文件.png)
+![Python3实现火车票查询工具-笔记-图6-车站中英文对照文件]()
 
 ##### 2.2使用`requests`库
 
