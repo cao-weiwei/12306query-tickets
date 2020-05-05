@@ -1,4 +1,4 @@
-# 12306query-tickets Readme
+# terminal train-tickets query tool on 12306.cn Readme
 
 ## demo
 
