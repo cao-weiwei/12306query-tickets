@@ -1,5 +1,9 @@
 # 12306query-tickets Readme
 
+## demo
+
+![image](https://github.com/cao-weiwei/12306query-tickets/blob/master/imgs/Python3%E5%AE%9E%E7%8E%B0%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7-%E7%AC%94%E8%AE%B0-%E5%9B%BE1-%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C%E7%A4%BA%E4%BE%8B.png)
+
 ## Key Features
 
 - Fetch queries from www.12306.cn vai official APIs / 通过12306车票查询接口制作命令行火车票查询工具
